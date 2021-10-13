@@ -1,0 +1,24 @@
+QueryBuilder builder = new QueryBuilder();
+builder.bool().mustMatch("element", "
+builder.bool().shouldMatch("lokalizacja_produktu",
+ "Nowy Meksyk").shouldMatch("numer_magazynu", 37);
+
+builder.bool().shouldMatch("lot_number", 307).bool()
+.mustMatch("expiry_date", "Jan 2020");
+
+{
+"zapytanie": {
+"bool": {
+
+"must": [
+{ "match": { "item": "Mleko" }},
+{ "match": { "item_type": "Nabiał" }}
+],
+
+"should": [
+{ "match": { " product_location": "Nowy Meksyk" }},
+{ "match": { "warehouse_number": 37 }}
+]
+}
+}
+}
