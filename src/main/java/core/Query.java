@@ -2,10 +2,10 @@ package core;
 
 
 public class Query {
-    private Bool bool;
+    public Bool bool;
 
-    protected Query() {
-        this.bool = new Bool();
+    protected Query(Bool bool) {
+        this.bool = bool;
     }
 
     public Bool getBool() {

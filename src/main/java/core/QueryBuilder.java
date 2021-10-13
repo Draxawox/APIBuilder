@@ -4,12 +4,13 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class QueryBuilder {
-    private Query query;
+    public Query query;
 
     public QueryBuilder() {
-        this.query = new Query();
+        this.query = new Query(new Bool(new Must(new ArrayList<>()), new Should(new ArrayList<>())));
     }
 
     public Query getQuery() {

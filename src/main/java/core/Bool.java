@@ -1,28 +1,46 @@
 package core;
 
+import java.util.ArrayList;
+
 public class Bool {
     private Must must;
     private Should should;
 
+    public Bool(Must must, Should should) {
+        this.must = must;
+        this.should = should;
+    }
+
     public Bool() {
-        must = new Must();
-        should = new Should();
+
     }
 
     public Should shouldMatch(String type, String value) {
+        if (this.getShould() == null) {
+            this.should = new Should(new ArrayList<>());
+        }
         this.should.getMatch().add(new Match(type, value));
         return this.should;
     }
     public Should shouldMatch(String type, int value) {
+        if (this.getShould() == null) {
+            this.should = new Should(new ArrayList<>());
+        }
         this.should.getMatch().add(new Match(type, value));
         return this.should;
     }
     public Must mustMatch(String type, String value) {
-        this.must.getMatch().add(new Match(type, value));
+        if (this.getMust() == null) {
+            this.must = new Must(new ArrayList<>());
+        }
+        this.getMust().getMatch().add(new Match(type, value));
         return this.must;
     }
 
     public Must mustMatch(String type, int value) {
+        if (this.getMust() == null) {
+            this.must = new Must(new ArrayList<>());
+        }
         this.must.getMatch().add(new Match(type, value));
         return this.must;
     }
@@ -33,35 +51,5 @@ public class Bool {
 
     public Should getShould() {
         return should;
-    }
-
-    /*
-
-    public Bool mustMatch(String type, String value) {
-        must.getMatch().add(new Match(type, value));
-        return this;
-    }
-
-    public Bool mustMatch(String type, int value) {
-        must.getMatch().add(new Match(type, value));
-        return this;
-    }
-    public Bool shouldMatch(String type, String value) {
-        should.getMatch().add(new Match(type, value));
-        return this;
-    }
-
-    public Bool shouldMatch(String type, int value) {
-        should.getMatch().add(new Match(type, value));
-        return this;
-    }
-*/
-
-    @Override
-    public String toString() {
-        return "Bool{" +
-                "must=" + must +
-                ", should=" + should +
-                '}';
     }
 }

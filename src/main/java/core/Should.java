@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Should extends Bool {
-    private List<Match> match;
+    public List<Match> match;
 
-    public Should() {
-        this.match = new ArrayList<>();
+    public Should(List<Match> match) {
+        this.match = match;
     }
 
     public List<Match> getMatch() {

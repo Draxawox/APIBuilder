@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Must extends Bool {
-    private List<Match> match;
+    public List<Match> match;
 
-    public Must() {
-        this.match = new ArrayList<>();
+    public Must(List<Match> match) {
+        super();
+        this.match = match;
     }
 
     public Must mustMatch(String type, String value) {
@@ -25,12 +26,5 @@ public class Must extends Bool {
 
     public List<Match> getMatch() {
         return match;
-    }
-
-    @Override
-    public String toString() {
-        return "Must{" +
-                "match=" + match +
-                '}';
     }
 }

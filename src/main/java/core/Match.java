@@ -1,9 +1,9 @@
 package core;
 
 public class Match {
-    private String type;
-    private String StringValue;
-    private int intValue;
+    public String type;
+    public String StringValue;
+    public int intValue;
 
     protected Match(String type, String StringValue) {
         this.type = type;
