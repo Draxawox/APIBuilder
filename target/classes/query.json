@@ -1,1 +1,1 @@
-{"query":{"bool":{"must":{"must":null,"should":null,"match":[]}}}}
+{"query":{"bool":{"must":{"must":null,"should":null,"match":[{"type":"item","StringValue":"Milk","intValue":0},{"type":"item_type","StringValue":"Dairy","intValue":0}]},"should":{"must":{"must":null,"should":null,"match":[{"type":"expiry_date","StringValue":"Jan 2020","intValue":0}]},"should":null,"match":[{"type":"product_location","StringValue":"New Mexico","intValue":0},{"type":"warehouse_number","StringValue":null,"intValue":37},{"type":"lot_number","StringValue":null,"intValue":307}]}}}}
